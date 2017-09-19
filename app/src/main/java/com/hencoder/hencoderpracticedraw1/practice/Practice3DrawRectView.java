@@ -2,11 +2,14 @@ package com.hencoder.hencoderpracticedraw1.practice;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
 public class Practice3DrawRectView extends View {
+    private final int length = 300;
+    private Paint paint;
 
     public Practice3DrawRectView(Context context) {
         super(context);
@@ -14,6 +17,7 @@ public class Practice3DrawRectView extends View {
 
     public Practice3DrawRectView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        paint = new Paint();
     }
 
     public Practice3DrawRectView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -25,5 +29,7 @@ public class Practice3DrawRectView extends View {
         super.onDraw(canvas);
 
 //        练习内容：使用 canvas.drawRect() 方法画矩形
+        canvas.drawRect(getWidth()/2-length/2,getHeight()/2-length/2,
+                getWidth()/2+length/2, getHeight()/2+length/2,paint);
     }
 }
